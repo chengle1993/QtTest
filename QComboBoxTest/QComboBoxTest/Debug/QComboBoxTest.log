@@ -1,0 +1,21 @@
+﻿Build started 2020/7/21 20:21:08.
+     1>Project "C:\Users\jincheng.zhou\documents\visual studio 2013\Projects\QComboBoxTest\QComboBoxTest\QComboBoxTest.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.3.2\5.3\msvc2013_opengl\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.3.2\5.3\msvc2013_opengl\include\QtCore /IC:\Qt\Qt5.3.2\5.3\msvc2013_opengl\include\QtGui /IC:\Qt\Qt5.3.2\5.3\msvc2013_opengl\include\QtANGLE /IC:\Qt\Qt5.3.2\5.3\msvc2013_opengl\include\QtWidgets /Zi /nologo /W1 /WX- /MP /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ItemDelegate.cpp QComboBoxTest.cpp
+         ItemDelegate.cpp
+         QComboBoxTest.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /l"0x0409" /nologo /fo"Debug\QComboBoxTest.res" QComboBoxTest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jincheng.zhou\documents\visual studio 2013\Projects\QComboBoxTest\Win32\Debug\\QComboBoxTest.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.3.2\5.3\msvc2013_opengl\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\jincheng.zhou\documents\visual studio 2013\Projects\QComboBoxTest\Win32\Debug\QComboBoxTest.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jincheng.zhou\documents\visual studio 2013\Projects\QComboBoxTest\Win32\Debug\QComboBoxTest.lib" /MACHINE:X86 /SAFESEH Debug\QComboBoxTest.res
+         Debug\ItemDelegate.obj
+         Debug\main.obj
+         Debug\QComboBoxTest.obj
+         Debug\moc_QComboBoxTest.obj
+         Debug\moc_ItemDelegate.obj
+         QComboBoxTest.vcxproj -> C:\Users\jincheng.zhou\documents\visual studio 2013\Projects\QComboBoxTest\Win32\Debug\QComboBoxTest.exe
+     1>Done Building Project "C:\Users\jincheng.zhou\documents\visual studio 2013\Projects\QComboBoxTest\QComboBoxTest\QComboBoxTest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.44
