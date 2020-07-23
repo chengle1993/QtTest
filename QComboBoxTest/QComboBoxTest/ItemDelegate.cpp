@@ -5,12 +5,13 @@
 #include <iostream>
 #include <QApplication>
 #include <QToolTip>
+#include <QMessageBox>
 using namespace std;
 
 ItemDelegate::ItemDelegate(QObject * parent)
 	: QStyledItemDelegate(parent)
 {
-
+	connect(this, &ItemDelegate::showItemMessage, this, &ItemDelegate::showMessage);
 }
 
 void ItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
@@ -24,7 +25,8 @@ void ItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, 
 	QStyledItemDelegate::paint(painter, viewOption, index);
 
 	int height = (viewOption.rect.height() - 9) / 2;
-	QPixmap pixmap = QPixmap("C:/IDBProject/idb/idbbondapp/resources/images/classical_gray/icon_market.png");
+	//QPixmap pixmap = QPixmap("C:/IDBProject/idb/idbbondapp/resources/images/classical_gray/icon_market.png");
+	QPixmap pixmap = QPixmap(":/icon_market.png");
 	QRect decorationRect = QRect(viewOption.rect.left() + viewOption.rect.width() - 30, viewOption.rect.top() + height, 9, 9);
 	QString str = index.data(Qt::DisplayRole).toString();
 	if (index.data(Qt::DisplayRole) == QStringLiteral("二级"))
@@ -41,14 +43,14 @@ bool ItemDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const Q
 	QMouseEvent *mouseEvent = static_cast<QMouseEvent *>(event);
 	if (event->type() == QEvent::MouseButtonPress && decorationRect.contains(mouseEvent->pos()))
 	{
-		emit deleteItem(index);
+		emit showItemMessage(index);
 	}
 
 	if (event->type() == QEvent::MouseMove && decorationRect.contains(mouseEvent->pos()))
 	{
 		QCursor cursor(Qt::PointingHandCursor);
 		QApplication::setOverrideCursor(cursor);
-		QString strText = QStringLiteral("删除账号信息");
+		QString strText = QStringLiteral("账号信息");
 		QToolTip::showText(mouseEvent->globalPos(), strText);
 	}
 	else
@@ -58,4 +60,9 @@ bool ItemDelegate::editorEvent(QEvent *event, QAbstractItemModel *model, const Q
 	}
 
 	return QStyledItemDelegate::editorEvent(event, model, option, index);
+}
+
+void ItemDelegate::showMessage(const QModelIndex &index)
+{
+	QMessageBox::information(0, "message", index.data(Qt::DisplayRole).toString(), QMessageBox::Default, QMessageBox::NoButton);
 }

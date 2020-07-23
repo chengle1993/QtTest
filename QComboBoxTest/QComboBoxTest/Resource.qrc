@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="icon_market.png">C:/IDBProject/idb/idbbondapp/resources/images/classical_gray/icon_market.png</file>
+    </qresource>
+</RCC>

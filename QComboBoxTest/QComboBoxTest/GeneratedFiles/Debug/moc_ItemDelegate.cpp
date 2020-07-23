@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ItemDelegate_t {
-    QByteArrayData data[4];
-    char stringdata[31];
+    QByteArrayData data[5];
+    char stringdata[48];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,11 +30,13 @@ struct qt_meta_stringdata_ItemDelegate_t {
 static const qt_meta_stringdata_ItemDelegate_t qt_meta_stringdata_ItemDelegate = {
     {
 QT_MOC_LITERAL(0, 0, 12),
-QT_MOC_LITERAL(1, 13, 10),
-QT_MOC_LITERAL(2, 24, 0),
-QT_MOC_LITERAL(3, 25, 5)
+QT_MOC_LITERAL(1, 13, 15),
+QT_MOC_LITERAL(2, 29, 0),
+QT_MOC_LITERAL(3, 30, 5),
+QT_MOC_LITERAL(4, 36, 11)
     },
-    "ItemDelegate\0deleteItem\0\0index"
+    "ItemDelegate\0showItemMessage\0\0index\0"
+    "showMessage"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,7 +46,7 @@ static const uint qt_meta_data_ItemDelegate[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -52,9 +54,15 @@ static const uint qt_meta_data_ItemDelegate[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x06 /* Public */,
+       1,    1,   24,    2, 0x06 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags
+       4,    1,   27,    2, 0x08 /* Private */,
 
  // signals: parameters
+    QMetaType::Void, QMetaType::QModelIndex,    3,
+
+ // slots: parameters
     QMetaType::Void, QMetaType::QModelIndex,    3,
 
        0        // eod
@@ -65,7 +73,8 @@ void ItemDelegate::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     if (_c == QMetaObject::InvokeMetaMethod) {
         ItemDelegate *_t = static_cast<ItemDelegate *>(_o);
         switch (_id) {
-        case 0: _t->deleteItem((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 0: _t->showItemMessage((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 1: _t->showMessage((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -73,7 +82,7 @@ void ItemDelegate::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         void **func = reinterpret_cast<void **>(_a[1]);
         {
             typedef void (ItemDelegate::*_t)(const QModelIndex & );
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ItemDelegate::deleteItem)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&ItemDelegate::showItemMessage)) {
                 *result = 0;
             }
         }
@@ -105,19 +114,19 @@ int ItemDelegate::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
 
 // SIGNAL 0
-void ItemDelegate::deleteItem(const QModelIndex & _t1)
+void ItemDelegate::showItemMessage(const QModelIndex & _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
