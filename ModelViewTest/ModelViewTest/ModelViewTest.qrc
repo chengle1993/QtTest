@@ -2,4 +2,15 @@
     <qresource prefix="/">
         <file>default.txt</file>
     </qresource>
+    <qresource prefix="/qss">
+        <file>qss/style1.qss</file>
+    </qresource>
+    <qresource prefix="/icon">
+        <file>icon/icon_idc_quote.png</file>
+        <file>icon/icon_search.png</file>
+        <file>icon/localizator.png</file>
+        <file>icon/plus.png</file>
+        <file>icon/radiobutton_checked_normal.png</file>
+        <file>icon/urgent.png</file>
+    </qresource>
 </RCC>

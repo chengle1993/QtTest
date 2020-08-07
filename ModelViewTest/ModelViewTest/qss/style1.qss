@@ -1,0 +1,37 @@
+/*      QTreeView       */
+QTreeView {
+    alternate-background-color: #d9d9d9;
+}
+
+QTreeView::item {
+    border: 1px solid #d9d9d9;
+    border-top-color: red;
+    border-bottom-color: blue;
+}
+
+/* 鼠标在QTreeView上面移动时的效果 */
+QTreeView::item:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #e7effd, stop: 1 #cbdaf1);
+    border: 1px solid #bfcde4;
+}
+
+QTreeView::item:selected {
+    border: 1px solid #567dbc;
+}
+
+/* 节点被选中激活时的效果 */
+QTreeView::item:selected:active{
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6ea1f1, stop: 1 #567dbc);
+}
+
+QTreeView::item:selected:!active {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #6b9be8, stop: 1 #577fbf);
+}
+
+QTreeView::branch:has-siblings:!adjoins-item {
+border-p_w_picpath: url(:/icon/icon/icon_idc_quote.png)0;
+}
+
+QTreeView::branch:has-siblings:adjoins-item {
+border-p_w_picpath: url(:/icon/icon/icon_search.png)0;
+}

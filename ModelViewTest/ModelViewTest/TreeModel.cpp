@@ -70,7 +70,7 @@ void TreeModel::setModelData(TreeItem *rootItem, QStringList stringList)
 
 QModelIndex TreeModel::index(int row, int column, const QModelIndex &parent) const
 {
-	TreeItem *treeItem = static_cast<TreeItem*>(parent.internalPointer());
+	TreeItem *treeItem = parent.isValid() ? static_cast<TreeItem*>(parent.internalPointer()) : rootItem;
 	if (treeItem)
 	{
 		if (treeItem->getChild(row))
@@ -85,7 +85,7 @@ QModelIndex TreeModel::parent(const QModelIndex &child) const
 {
 	if (child.isValid())
 	{
-		TreeItem *childItem = static_cast<TreeItem*>(child.internalPointer());
+		TreeItem *childItem = child.isValid() ? static_cast<TreeItem*>(child.internalPointer()): rootItem;
 		TreeItem *parentItem = childItem->getParent();
 		if (childItem && parentItem)
 		{
@@ -101,7 +101,7 @@ QModelIndex TreeModel::parent(const QModelIndex &child) const
 
 int TreeModel::rowCount(const QModelIndex &parent) const
 {
-	TreeItem *parentItem = static_cast<TreeItem*>(parent.internalPointer());
+	TreeItem *parentItem = parent.isValid() ? static_cast<TreeItem*>(parent.internalPointer()) : rootItem;
 	if (parentItem)
 	{
 		qDebug() << "rowcount" << parentItem->getChildCount();
@@ -124,7 +124,7 @@ QVariant TreeModel::data(const QModelIndex &index, int role) const
 {
 	if (index.isValid())
 	{
-		TreeItem *treeItem = static_cast<TreeItem*>(index.internalPointer());
+		TreeItem *treeItem = index.isValid() ? static_cast<TreeItem*>(index.internalPointer()) : rootItem;
 		if (role == Qt::DisplayRole || role == Qt::EditRole)
 		{
 			if (treeItem)
@@ -134,4 +134,23 @@ QVariant TreeModel::data(const QModelIndex &index, int role) const
 		}
 	}
 	return QVariant();
+}
+
+QVariant TreeModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+	if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
+	{
+		return rootItem->getData(section);
+	}
+	return QVariant();
+}
+
+TreeItem *TreeModel::getItem(const QModelIndex &index) const
+{
+	if (index.isValid()) {
+		TreeItem *item = static_cast<TreeItem*>(index.internalPointer());
+		if (item)
+			return item;
+	}
+	return rootItem;
 }
