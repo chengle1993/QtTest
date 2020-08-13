@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>radio1.png</file>
+        <file>radio2.png</file>
+        <file>radio3.png</file>
+    </qresource>
+</RCC>
