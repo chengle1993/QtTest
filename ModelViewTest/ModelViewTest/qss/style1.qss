@@ -35,3 +35,29 @@ border-p_w_picpath: url(:/icon/icon/icon_idc_quote.png)0;
 QTreeView::branch:has-siblings:adjoins-item {
 border-p_w_picpath: url(:/icon/icon/icon_search.png)0;
 }
+
+
+/*      QTableView       */
+QTableView {
+	/* 选中条目背景色 */
+	/* selection-background-color:qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5, stop: 0 #4169E1, stop: 1 white); */
+	
+	gridline-color: #000000;
+    border: 0px solid #111;
+    color: #E7C789;
+}
+
+QTableView::item{
+    background-color: #0D1E1D;
+}
+QTableView::item:alternate{
+    background-color: #081818;
+}
+QTableView::item:selected{
+    background-color:#074446;
+    color:#A99673;
+}
+QTableView QTableCornerButton::section { /*在有竖直头的情况下配置左上角Button*/
+    background: red;
+    border: 2px outset red;
+}

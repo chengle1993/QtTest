@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>default.txt</file>
+        <file>bond_bank.txt</file>
     </qresource>
     <qresource prefix="/qss">
         <file>qss/style1.qss</file>

@@ -112,7 +112,10 @@
     </QtRcc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Delegate.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TableModel.cpp" />
+    <ClCompile Include="TableView.cpp" />
     <ClCompile Include="TreeItem.cpp" />
     <ClCompile Include="TreeModel.cpp" />
     <ClCompile Include="TreeView.cpp" />
@@ -127,6 +130,9 @@
     <QtMoc Include="TreeModel.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="TableView.h" />
+    <QtMoc Include="TableModel.h" />
+    <QtMoc Include="Delegate.h" />
     <ClInclude Include="TreeItem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

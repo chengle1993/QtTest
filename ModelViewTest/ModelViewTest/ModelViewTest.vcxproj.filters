@@ -42,6 +42,15 @@
     <ClCompile Include="TreeItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TableView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TableModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Delegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="ModelViewTest.qrc">
@@ -53,6 +62,15 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="TreeModel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TableView.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TableModel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Delegate.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
